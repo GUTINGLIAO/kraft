@@ -7,7 +7,7 @@ import shutil
 def classfiy_pic(num: int):
     _create_dir(num)
 
-    result_file = open(r"./results.txt")  # 打开文件
+    result_file = open(r"results.txt")  # 打开文件
     line = result_file.readline()  # 读取每一行
     while line:
         print(line.split('\t'))

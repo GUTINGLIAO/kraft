@@ -73,14 +73,14 @@ def save(path, filename, data):
 def main(num: int):
     path_filenames = sorted(get_file_name("picture"))  # 从picture 文件夹里面获取图片名字
     labels, cluster_centers = kmeans_detect(path_filenames, num)
-    imgs = os.listdir('./picture')
+    imgs = os.listdir('picture')
     imgnum = len(imgs)  # 文件夹中图片的数量
     print('文件夹里面图片数量:', imgnum)
 
     res_dict = res_fit(path_filenames, labels)  # 带上标签
     print('分类结果为:', res_dict)
 
-    save('./', 'results.txt', res_dict)  # 文件保存为txt格式
+    save('../', 'results.txt', res_dict)  # 文件保存为txt格式
     s2 = time.time()
     print('无监督分类器总运行时间为:', s2 - s1)
 
@@ -88,4 +88,4 @@ def main(num: int):
 
 
 if __name__ == "__main__":  # 主函数启动
-    main(5)
+    main(3)
