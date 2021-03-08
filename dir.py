@@ -13,7 +13,7 @@ def classfiy_pic(num: int):
         print(line.split('\t'))
         num = line.split('\t', 1)[1][0]  # 找到txt文件中的分类
         file_name = line.split('\t', 1)[0]
-        shutil.move('./picture/' + file_name, './' + str(num) + '/' + file_name)
+        shutil.copyfile('./picture/' + file_name, './' + str(num) + '/' + file_name)
         line = result_file.readline()
     result_file.close()  # 关闭文件
 
